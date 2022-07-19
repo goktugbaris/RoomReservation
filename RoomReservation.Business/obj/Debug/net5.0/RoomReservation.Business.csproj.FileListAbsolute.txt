@@ -1,0 +1,12 @@
+C:\Users\GOKTUG\Source\Repos\RoomReservation\RoomReservation.Business\bin\Debug\net5.0\RoomReservation.Business.deps.json
+C:\Users\GOKTUG\Source\Repos\RoomReservation\RoomReservation.Business\bin\Debug\net5.0\RoomReservation.Business.dll
+C:\Users\GOKTUG\Source\Repos\RoomReservation\RoomReservation.Business\bin\Debug\net5.0\ref\RoomReservation.Business.dll
+C:\Users\GOKTUG\Source\Repos\RoomReservation\RoomReservation.Business\bin\Debug\net5.0\RoomReservation.Business.pdb
+C:\Users\GOKTUG\Source\Repos\RoomReservation\RoomReservation.Business\obj\Debug\net5.0\RoomReservation.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\GOKTUG\Source\Repos\RoomReservation\RoomReservation.Business\obj\Debug\net5.0\RoomReservation.Business.AssemblyInfoInputs.cache
+C:\Users\GOKTUG\Source\Repos\RoomReservation\RoomReservation.Business\obj\Debug\net5.0\RoomReservation.Business.AssemblyInfo.cs
+C:\Users\GOKTUG\Source\Repos\RoomReservation\RoomReservation.Business\obj\Debug\net5.0\RoomReservation.Business.csproj.CoreCompileInputs.cache
+C:\Users\GOKTUG\Source\Repos\RoomReservation\RoomReservation.Business\obj\Debug\net5.0\RoomReservation.Business.dll
+C:\Users\GOKTUG\Source\Repos\RoomReservation\RoomReservation.Business\obj\Debug\net5.0\ref\RoomReservation.Business.dll
+C:\Users\GOKTUG\Source\Repos\RoomReservation\RoomReservation.Business\obj\Debug\net5.0\RoomReservation.Business.pdb
+C:\Users\GOKTUG\Source\Repos\RoomReservation\RoomReservation.Business\obj\Debug\net5.0\RoomReservation.Business.csproj.AssemblyReference.cache

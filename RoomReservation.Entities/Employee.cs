@@ -1,10 +1,16 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace RoomReservation.Entities
 {
     public class Employee:IEntity
     {
+        public Employee()
+        {
+            this.RoomBookings = new HashSet<RoomBooking>();
+        }
         [Key]
         public int RegistryNo { get; set; }
         public string FirstName { get; set; }
@@ -13,7 +19,9 @@ namespace RoomReservation.Entities
         public string Email { get; set; }
         [DataType(DataType.PhoneNumber)]
         public string PhoneNumber { get; set; }
+        public bool IsBusy { get; set; }
         public int DepartmentID { get; set; }
         public virtual Department Department { get; set; }
+        public virtual ICollection<RoomBooking> RoomBookings { get; set; }
     }
 }

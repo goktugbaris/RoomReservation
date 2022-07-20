@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace RoomReservation.DataAccess.Abstract
 {
-    public interface IRoomRepository:IGenericRepository<Room>
+    public interface IRoomBookingRepository:IGenericRepository<RoomBooking>
     {
-        List<Room> GetHomePage();
     }
 }

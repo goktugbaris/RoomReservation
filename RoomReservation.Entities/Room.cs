@@ -19,6 +19,7 @@ namespace RoomReservation.Entities
         public int Floor { get; set; }
         public string RoomInfo { get; set; }
         public bool IsAvaliable { get; set; }
+        public bool IsHome { get; set; }
         public virtual ICollection<RoomBooking> RoomBookings{ get; set; }
     }
 }

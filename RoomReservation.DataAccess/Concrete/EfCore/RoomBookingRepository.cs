@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace RoomReservation.DataAccess.Concrete.EfCore
 {
-    public class OrganizationRepository : GenericRepository<Organization>, IOrganizationRepository
+    public class RoomBookingRepository : GenericRepository<RoomBooking>, IRoomBookingRepository
     {
-        public OrganizationRepository(DbContext dbContext) : base(dbContext)
+        public RoomBookingRepository(DbContext dbContext) : base(dbContext)
         {
         }
     }

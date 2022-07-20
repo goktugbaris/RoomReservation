@@ -1,4 +1,5 @@
-﻿using RoomReservation.DataAccess.Abstract;
+﻿using Microsoft.EntityFrameworkCore;
+using RoomReservation.DataAccess.Abstract;
 using RoomReservation.Entities;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,10 @@ using System.Threading.Tasks;
 
 namespace RoomReservation.DataAccess.Concrete.EfCore
 {
-    public class DepartmentRepository : GenericRepository<Department>,IDepartmentRepository
+    public class DepartmentRepository : GenericRepository<Department>, IDepartmentRepository
     {
+        public DepartmentRepository(DbContext dbContext) : base(dbContext)
+        {
+        }
     }
 }

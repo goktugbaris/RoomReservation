@@ -1,4 +1,5 @@
-﻿using RoomReservation.DataAccess.Abstract;
+﻿using Microsoft.EntityFrameworkCore;
+using RoomReservation.DataAccess.Abstract;
 using RoomReservation.Entities;
 using System;
 using System.Collections.Generic;
@@ -10,9 +11,19 @@ namespace RoomReservation.DataAccess.Concrete.EfCore
 {
     public class RoomRepository : GenericRepository<Room>, IRoomRepository
     {
-        public Room GetRoomInfo(string info)
+        private readonly RoomDbContext _dbContext;
+        public RoomRepository(RoomDbContext dbContext) : base(dbContext)
         {
-            throw new NotImplementedException();
+            _dbContext = dbContext;
+        }
+        private RoomDbContext RoomDbContext
+        {
+            get { return _dbContext; }
+        }
+
+        public List<Room> GetHomePage()
+        {
+            return _dbContext.Rooms.Where(i => i.IsAvaliable && i.IsHome).ToList();
         }
     }
 }

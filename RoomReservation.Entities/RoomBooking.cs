@@ -11,7 +11,6 @@ namespace RoomReservation.Entities
     {
         [Key]
         public int Id { get; set; }
-        public int RoomId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         [DataType(DataType.EmailAddress)]
@@ -22,7 +21,11 @@ namespace RoomReservation.Entities
         public TimeSpan EndTime { get; set; }
         public DateTime Date { get; set; }
         public int RegistryNo { get; set; }
+        public virtual Employee Employee { get; set; }
+        public int RoomId { get; set; }
         public virtual Room Room { get; set; }
+        public int DepartmentID { get; set; }
+        public virtual Department Department { get; set; }
 
     }
 }

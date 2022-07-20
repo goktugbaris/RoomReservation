@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RoomReservation.Business.Validators
 {
-    public class DepartmentValidator: AbstractValidator<Room>
+    public class DepartmentValidator: AbstractValidator<Department>
     {
     }
 }

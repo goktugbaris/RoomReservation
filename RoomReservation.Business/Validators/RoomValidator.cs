@@ -10,5 +10,15 @@ namespace RoomReservation.Business.Validators
 {
     public class RoomValidator:AbstractValidator<Room>
     {
+        public RoomValidator()
+        {
+            RuleFor(x => x.RoomId).NotNull().NotEmpty();
+            RuleFor(x => x.Capacity).GreaterThan(0).NotEmpty();
+            RuleFor(x => x.Floor).GreaterThan(0).NotEmpty();
+            RuleFor(x => x.IsAvaliable).NotEmpty();
+            RuleFor(x => x.IsHome).NotEmpty();
+            RuleFor(x => x.RoomInfo).NotEmpty();
+        }
+        
     }
 }

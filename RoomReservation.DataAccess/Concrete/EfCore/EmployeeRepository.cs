@@ -8,29 +8,14 @@ using System.Threading.Tasks;
 
 namespace RoomReservation.DataAccess.Concrete.EfCore
 {
-    public class EmployeeRepository : IEmployeeRepository
+    public class EmployeeRepository : GenericRepository<Employee>, IEmployeeRepository
     {
-        public Task<Employee> Create(Employee entity)
+        public Employee GetByDepartment(Employee employee)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Employee> Delete(Employee entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<List<Employee>> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Employee> GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Employee> Update(Employee entity)
+        public Employee GetByOrganization(Employee employee)
         {
             throw new NotImplementedException();
         }

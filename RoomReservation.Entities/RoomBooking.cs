@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RoomReservation.Entities
 {
-    public class RoomBooking
+    public class RoomBooking:IEntity
     {
         [Key]
         public int Id { get; set; }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RoomReservation.Entities
 {
-    public class Organization
+    public class Organization:IEntity
     {
         public Organization()
         {

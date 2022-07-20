@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace RoomReservation.Entities
 {
-    public class Employee
+    public class Employee:IEntity
     {
         [Key]
         public int RegistryNo { get; set; }

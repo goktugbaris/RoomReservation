@@ -9,5 +9,6 @@ namespace RoomReservation.DataAccess.Abstract
 {
     public interface IRoomRepository:IGenericRepository<Room>
     {
+        Room GetRoomInfo(string info);
     }
 }

@@ -43,9 +43,9 @@ namespace RoomReservation.Business.Concrete
             return _unitofwork.Rooms.GetHomePage();
         }
 
-        public async Task Update(Room entity, int id)
+        public async Task Update(Room entity)
         {
-            await _unitofwork.Rooms.Update(entity, id);
+            await _unitofwork.Rooms.Update(entity);
             await _unitofwork.SaveAsync();
         }
     }

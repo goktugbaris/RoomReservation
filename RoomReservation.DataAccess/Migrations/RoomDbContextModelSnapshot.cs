@@ -41,7 +41,7 @@ namespace RoomReservation.DataAccess.Migrations
 
             modelBuilder.Entity("RoomReservation.Entities.Employee", b =>
                 {
-                    b.Property<int>("RegistryNo")
+                    b.Property<int>("EmployeeId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -55,15 +55,23 @@ namespace RoomReservation.DataAccess.Migrations
                     b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsBusy")
+                        .HasColumnType("bit");
+
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("OrganizationID")
+                        .HasColumnType("int");
 
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("RegistryNo");
+                    b.HasKey("EmployeeId");
 
                     b.HasIndex("DepartmentID");
+
+                    b.HasIndex("OrganizationID");
 
                     b.ToTable("Employees");
                 });
@@ -99,6 +107,9 @@ namespace RoomReservation.DataAccess.Migrations
                     b.Property<bool>("IsAvaliable")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("IsHome")
+                        .HasColumnType("bit");
+
                     b.Property<string>("RoomInfo")
                         .HasColumnType("nvarchar(max)");
 
@@ -115,10 +126,16 @@ namespace RoomReservation.DataAccess.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("DateTime");
+
+                    b.Property<int>("DepartmentID")
+                        .HasColumnType("int");
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EmployeeID")
+                        .HasColumnType("int");
 
                     b.Property<TimeSpan>("EndTime")
                         .HasColumnType("time");
@@ -132,9 +149,6 @@ namespace RoomReservation.DataAccess.Migrations
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RegistryNo")
-                        .HasColumnType("int");
-
                     b.Property<int>("RoomId")
                         .HasColumnType("int");
 
@@ -142,6 +156,10 @@ namespace RoomReservation.DataAccess.Migrations
                         .HasColumnType("time");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("DepartmentID");
+
+                    b.HasIndex("EmployeeID");
 
                     b.HasIndex("RoomId");
 
@@ -167,16 +185,40 @@ namespace RoomReservation.DataAccess.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("RoomReservation.Entities.Organization", "Organization")
+                        .WithMany("Employees")
+                        .HasForeignKey("OrganizationID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Department");
+
+                    b.Navigation("Organization");
                 });
 
             modelBuilder.Entity("RoomReservation.Entities.RoomBooking", b =>
                 {
+                    b.HasOne("RoomReservation.Entities.Department", "Department")
+                        .WithMany("RoomBookings")
+                        .HasForeignKey("DepartmentID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("RoomReservation.Entities.Employee", "Employee")
+                        .WithMany("RoomBookings")
+                        .HasForeignKey("EmployeeID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("RoomReservation.Entities.Room", "Room")
                         .WithMany("RoomBookings")
                         .HasForeignKey("RoomId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Department");
+
+                    b.Navigation("Employee");
 
                     b.Navigation("Room");
                 });
@@ -184,11 +226,20 @@ namespace RoomReservation.DataAccess.Migrations
             modelBuilder.Entity("RoomReservation.Entities.Department", b =>
                 {
                     b.Navigation("Employees");
+
+                    b.Navigation("RoomBookings");
+                });
+
+            modelBuilder.Entity("RoomReservation.Entities.Employee", b =>
+                {
+                    b.Navigation("RoomBookings");
                 });
 
             modelBuilder.Entity("RoomReservation.Entities.Organization", b =>
                 {
                     b.Navigation("Departments");
+
+                    b.Navigation("Employees");
                 });
 
             modelBuilder.Entity("RoomReservation.Entities.Room", b =>

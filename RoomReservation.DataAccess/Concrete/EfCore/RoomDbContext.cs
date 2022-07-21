@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using RoomReservation.DataAccess.Configurations;
 using RoomReservation.Entities;
 using System;
 using System.Collections.Generic;
@@ -19,10 +20,10 @@ namespace RoomReservation.DataAccess.Concrete.EfCore
         public DbSet<Organization> Organizations { get; set; }
         public DbSet<RoomBooking> RoomBookings { get; set; }
         public DbSet<Room> Rooms { get; set; }
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<RoomBooking>(i => i.Property(e => e.Date).HasColumnType("datetime2").HasAnnotation();
-        //}
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new RoomBookingConfigurations());
+        }
     }
 }
 

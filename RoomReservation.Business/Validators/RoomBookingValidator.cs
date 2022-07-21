@@ -19,7 +19,7 @@ namespace RoomReservation.Business.Validators
             RuleFor(x => x.StartTime).NotEmpty();
             RuleFor(x => x.EndTime).NotEmpty();
             RuleFor(x => x.Email).EmailAddress();
-            RuleFor(x => x.RegistryNo).NotEmpty();
+            RuleFor(x => x.EmployeeID).NotEmpty();
         }
     }
 }

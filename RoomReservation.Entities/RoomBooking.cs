@@ -21,12 +21,11 @@ namespace RoomReservation.Entities
         public DateTime Date { get; set; }
         public TimeSpan StartTime { get; set; }
         public TimeSpan EndTime { get; set; }
-        public int RegistryNo { get; set; }
-        public virtual Employee Employee { get; set; }
         public int RoomId { get; set; }
         public virtual Room Room { get; set; }
         public int DepartmentID { get; set; }
         public virtual Department Department { get; set; }
-        public object DateTime { get; set; }
+        public int EmployeeID { get; set; }
+        public virtual Employee Employee { get; set; }
     }
 }

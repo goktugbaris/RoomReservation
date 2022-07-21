@@ -16,7 +16,7 @@ namespace RoomReservation.Business.Validators
             RuleFor(x => x.LastName).NotEmpty().Length(1, 10);
             RuleFor(x => x.Email).EmailAddress().NotEmpty();
             RuleFor(x => x.IsBusy).NotEmpty();
-            RuleFor(x => x.RegistryNo).NotEmpty().WithMessage("Sicil numarası boş olamaz.");
+            RuleFor(x => x.EmployeeId).NotEmpty().WithMessage("Sicil numarası boş olamaz.");
             RuleFor(x => x.DepartmentID).NotEmpty();
         }
     }

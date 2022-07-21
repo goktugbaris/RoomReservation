@@ -12,8 +12,8 @@ namespace RoomReservation.Business.Abstract
         Task<Room> GetById(int id);
         Task<List<Room>> GetAll();
         Task<Room> Create(Room entity);
-        Task Update(Room entity, int id);
-        Task Delete(int id);
+        Task Update(Room entity);
+        Task Delete(Room entity);
         List<Room> GetHomePage();
     }
 }

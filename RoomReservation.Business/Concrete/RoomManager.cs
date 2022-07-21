@@ -23,9 +23,10 @@ namespace RoomReservation.Business.Concrete
             return entity;
         }
 
-        public Task Delete(int id)
+        public async Task Delete(Room entity)
         {
-            return _unitofwork.Rooms.Delete(id);
+            await _unitofwork.Rooms.Delete(entity);
+            await _unitofwork.SaveAsync();
         }
 
         public async Task<List<Room>> GetAll()

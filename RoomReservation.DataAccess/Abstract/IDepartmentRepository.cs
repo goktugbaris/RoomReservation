@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace RoomReservation.DataAccess.Abstract
 {
-    public interface IDepartmentRepository:IGenericRepository<Department>
+    public interface IDepartmentRepository : IGenericRepository<Department>
     {
+        Task<List<Employee>> GetByDepartment(int id);
     }
 }

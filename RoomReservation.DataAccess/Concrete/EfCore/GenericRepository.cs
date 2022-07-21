@@ -26,7 +26,7 @@ namespace RoomReservation.DataAccess.Concrete.EfCore
 
         public async Task Delete(TEntity entity)
         {
-             _dbContext.Set<TEntity>().Remove(entity);
+            await Task.Run(() => { _dbContext.Set<TEntity>().Remove(entity); });
         }
 
         public async Task<List<TEntity>> GetAll()

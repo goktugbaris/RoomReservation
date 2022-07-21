@@ -12,6 +12,8 @@ namespace RoomReservation.Business.Validators
     {
         public OrganizationValidator()
         {
+            RuleFor(x => x.OrganizationId).NotEmpty();
+            RuleFor(x => x.OrganizationName).NotEmpty();
         }
     }
 }

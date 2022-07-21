@@ -26,6 +26,6 @@ namespace RoomReservation.Entities
         public virtual Room Room { get; set; }
         public int DepartmentID { get; set; }
         public virtual Department Department { get; set; }
-
+        public object DateTime { get; set; }
     }
 }

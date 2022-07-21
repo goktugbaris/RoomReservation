@@ -21,23 +21,16 @@ namespace RoomReservation.DataAccess.Concrete.EfCore
             get { return _dbContext; }
         }
 
-        //public Employee GetByDepartment(string fname)
-        //{
-        //    var employee = _dbContext
-        //            .Employees
-        //            .Where(i => i.IsBusy)
-        //            .AsQueryable();
-        //    if(!string.IsNullOrEmpty(fname))
-        //    {
-        //        employee = employee.Include(i=>i.RoomBookings)
-        //                           .ThenInclude(i=> i.Department)
-        //                           .Where(i=> i.RoomBookings.Any(j=> j.Department))
-        //    }
-        //}
+        public List<Employee> GetByDepartment(int id)
+        {
+            var employees = _dbContext.Employees.Include(i => i.Department).ToList();
+            return employees; 
+        }
 
-        //public Employee GetByOrganization(Employee employee)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public List<Employee> GetByOrganization(int id)
+        {
+            var employees = _dbContext.Employees.Include(i => i.Organization).ToList();
+            return employees;
+        }
     }
 }

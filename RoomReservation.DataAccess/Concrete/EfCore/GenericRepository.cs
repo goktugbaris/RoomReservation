@@ -12,8 +12,8 @@ namespace RoomReservation.DataAccess.Concrete.EfCore
     public class GenericRepository<TEntity> : IGenericRepository<TEntity> 
         where TEntity:class,IEntity, new()
     {
-        protected readonly DbContext _dbContext;
-        public GenericRepository(DbContext dbContext)
+        protected readonly RoomDbContext _dbContext;
+        public GenericRepository(RoomDbContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -24,11 +24,9 @@ namespace RoomReservation.DataAccess.Concrete.EfCore
             return entity;
         }
 
-        public async Task Delete(int id)
+        public async Task Delete(TEntity entity)
         {
-            var entity = await GetById(id);
-            _dbContext.Set<TEntity>().Remove(entity);
-            
+             _dbContext.Set<TEntity>().Remove(entity);
         }
 
         public async Task<List<TEntity>> GetAll()
@@ -41,10 +39,10 @@ namespace RoomReservation.DataAccess.Concrete.EfCore
             return await _dbContext.Set<TEntity>().FindAsync(id);
         }
 
-        public async Task Update(TEntity entity, int id)
+        public async Task Update(TEntity entity)
         {
-            entity = await GetById(id);
-            _dbContext.Set<TEntity>().Update(entity);
+            var updatedEntity = _dbContext.Entry(entity);
+            updatedEntity.State = EntityState.Modified;
         }
     }
 }

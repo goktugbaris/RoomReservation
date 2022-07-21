@@ -36,7 +36,7 @@ namespace RoomReservation.Business.Concrete
 
         public List<Employee> GetByDepartment(int id)
         {
-            return await _unitOfWork.Departments.GetByDepartment(id);
+            return _unitOfWork.Employees.GetByDepartment(id);
         }
 
         public async Task<Employee> GetById(int id)
@@ -46,7 +46,7 @@ namespace RoomReservation.Business.Concrete
 
         public List<Employee> GetByOrganization(int id)
         {
-            throw new NotImplementedException();
+            return _unitOfWork.Employees.GetByOrganization(id);
         }
 
         public async Task Update(Employee entity)

@@ -17,9 +17,9 @@ namespace RoomReservation.Entities
         public string Email { get; set; }
         [DataType(DataType.PhoneNumber)]
         public string PhoneNumber { get; set; }
+        public DateTime Date { get; set; }
         public TimeSpan StartTime { get; set; }
         public TimeSpan EndTime { get; set; }
-        public DateTime Date { get; set; }
         public int RegistryNo { get; set; }
         public virtual Employee Employee { get; set; }
         public int RoomId { get; set; }

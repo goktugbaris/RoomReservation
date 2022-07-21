@@ -11,7 +11,7 @@ namespace RoomReservation.DataAccess.Concrete.EfCore
 {
     public class OrganizationRepository : GenericRepository<Organization>, IOrganizationRepository
     {
-        public OrganizationRepository(DbContext dbContext) : base(dbContext)
+        public OrganizationRepository(RoomDbContext dbContext) : base(dbContext)
         {
         }
     }

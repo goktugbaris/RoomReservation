@@ -10,3 +10,8 @@ C:\Users\GOKTUG\Source\Repos\RoomReservation\RoomReservation.Business\obj\Debug\
 C:\Users\GOKTUG\Source\Repos\RoomReservation\RoomReservation.Business\obj\Debug\net5.0\ref\RoomReservation.Business.dll
 C:\Users\GOKTUG\Source\Repos\RoomReservation\RoomReservation.Business\obj\Debug\net5.0\RoomReservation.Business.pdb
 C:\Users\GOKTUG\Source\Repos\RoomReservation\RoomReservation.Business\obj\Debug\net5.0\RoomReservation.Business.csproj.AssemblyReference.cache
+C:\Users\GOKTUG\Source\Repos\RoomReservation\RoomReservation.Business\bin\Debug\net5.0\RoomReservation.DataAccess.dll
+C:\Users\GOKTUG\Source\Repos\RoomReservation\RoomReservation.Business\bin\Debug\net5.0\RoomReservation.Entities.dll
+C:\Users\GOKTUG\Source\Repos\RoomReservation\RoomReservation.Business\bin\Debug\net5.0\RoomReservation.DataAccess.pdb
+C:\Users\GOKTUG\Source\Repos\RoomReservation\RoomReservation.Business\bin\Debug\net5.0\RoomReservation.Entities.pdb
+C:\Users\GOKTUG\Source\Repos\RoomReservation\RoomReservation.Business\obj\Debug\net5.0\RoomReservation.Business.csproj.CopyComplete

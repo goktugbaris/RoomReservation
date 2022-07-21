@@ -11,7 +11,7 @@ namespace RoomReservation.DataAccess.Concrete.EfCore
 {
     public class RoomBookingRepository : GenericRepository<RoomBooking>, IRoomBookingRepository
     {
-        public RoomBookingRepository(DbContext dbContext) : base(dbContext)
+        public RoomBookingRepository(RoomDbContext dbContext) : base(dbContext)
         {
         }
     }

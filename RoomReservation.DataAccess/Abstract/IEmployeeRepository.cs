@@ -9,7 +9,6 @@ namespace RoomReservation.DataAccess.Abstract
 {
     public interface IEmployeeRepository:IGenericRepository<Employee>
     {
-        List<Employee> GetByOrganization(int id);
         List<Employee> GetByDepartment(int id);
     }
 }

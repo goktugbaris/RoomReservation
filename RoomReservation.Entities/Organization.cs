@@ -12,12 +12,10 @@ namespace RoomReservation.Entities
         public Organization()
         {
             this.Departments = new HashSet<Department>();
-            this.Employees = new HashSet<Employee>();
         }
         [Key]
         public int OrganizationId { get; set; }
         public string OrganizationName { get; set; }
-        public virtual ICollection<Employee> Employees { get; set; }
         public virtual ICollection<Department> Departments { get; set; }
     }
 }

@@ -12,7 +12,6 @@ namespace RoomReservation.Entities
         public Department()
         {
             this.Employees = new HashSet<Employee>();
-            this.RoomBookings = new HashSet<RoomBooking>();
         }
         [Key]
         public int DeparmentId { get; set; }
@@ -20,6 +19,5 @@ namespace RoomReservation.Entities
         public int OrganizationID { get; set; }
         public virtual Organization Organization { get; set; }
         public virtual ICollection<Employee> Employees { get; set; }
-        public virtual ICollection<RoomBooking> RoomBookings { get; set; }
     }
 }

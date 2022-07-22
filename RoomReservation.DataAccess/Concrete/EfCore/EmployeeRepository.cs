@@ -26,11 +26,5 @@ namespace RoomReservation.DataAccess.Concrete.EfCore
             var employees = _dbContext.Employees.Include(i => i.Department).ToList();
             return employees; 
         }
-
-        public List<Employee> GetByOrganization(int id)
-        {
-            var employees = _dbContext.Employees.Include(i => i.Organization).ToList();
-            return employees;
-        }
     }
 }

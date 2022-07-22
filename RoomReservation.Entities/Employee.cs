@@ -22,8 +22,6 @@ namespace RoomReservation.Entities
         public bool IsBusy { get; set; }
         public int DepartmentID { get; set; }
         public virtual Department Department { get; set; }
-        public int OrganizationID { get; set; }
-        public virtual Organization Organization { get; set; }
         public virtual ICollection<RoomBooking> RoomBookings { get; set; }
     }
 }

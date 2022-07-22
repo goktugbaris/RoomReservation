@@ -26,3 +26,4 @@ C:\Users\GOKTUG\Source\Repos\RoomReservation\RoomReservation.Api\obj\Debug\net5.
 C:\Users\GOKTUG\Source\Repos\RoomReservation\RoomReservation.Api\obj\Debug\net5.0\ref\RoomReservation.Api.dll
 C:\Users\GOKTUG\Source\Repos\RoomReservation\RoomReservation.Api\obj\Debug\net5.0\RoomReservation.Api.pdb
 C:\Users\GOKTUG\Source\Repos\RoomReservation\RoomReservation.Api\obj\Debug\net5.0\RoomReservation.Api.genruntimeconfig.cache
+C:\Users\GOKTUG\Source\Repos\RoomReservation\RoomReservation.Api\obj\Debug\net5.0\RoomReservation.Api.csproj.AssemblyReference.cache

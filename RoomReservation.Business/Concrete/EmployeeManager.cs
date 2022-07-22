@@ -44,11 +44,6 @@ namespace RoomReservation.Business.Concrete
             return await _unitOfWork.Employees.GetById(id);
         }
 
-        public List<Employee> GetByOrganization(int id)
-        {
-            return _unitOfWork.Employees.GetByOrganization(id);
-        }
-
         public async Task Update(Employee entity)
         {
             await _unitOfWork.Employees.Update(entity);

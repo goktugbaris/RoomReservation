@@ -11,6 +11,9 @@ namespace RoomReservation.DataAccess.Concrete.EfCore
 {
     public class RoomDbContext:DbContext
     {
+        public RoomDbContext(DbContextOptions options):base(options)
+        {
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server=GOKTUG\MSSQLSERVER01;Database=RoomReservationDb;Trusted_Connection=True;MultipleActiveResultSets=true;");

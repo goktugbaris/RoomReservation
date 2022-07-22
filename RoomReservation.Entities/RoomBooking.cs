@@ -23,8 +23,6 @@ namespace RoomReservation.Entities
         public TimeSpan EndTime { get; set; }
         public int RoomId { get; set; }
         public virtual Room Room { get; set; }
-        public int DepartmentID { get; set; }
-        public virtual Department Department { get; set; }
         public int EmployeeID { get; set; }
         public virtual Employee Employee { get; set; }
     }

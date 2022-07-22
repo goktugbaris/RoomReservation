@@ -1,11 +1,16 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using RoomReservation.Business.Abstract;
+using RoomReservation.Business.Concrete;
+using RoomReservation.DataAccess.Abstract;
+using RoomReservation.DataAccess.Concrete.EfCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +30,9 @@ namespace RoomReservation.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddDbContext<RoomDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MsSqlConnection")));
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IOrganizationService, OrganizationManager>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

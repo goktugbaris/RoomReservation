@@ -20,8 +20,8 @@ namespace RoomReservation.Entities
         [DataType(DataType.PhoneNumber)]
         public string PhoneNumber { get; set; }
         public bool IsBusy { get; set; }
-        public int DepartmentID { get; set; }
-        public virtual Department Department { get; set; }
+        public int DepartmentId { get; set; }
+        public Department Department { get; set; }
         public virtual ICollection<RoomBooking> RoomBookings { get; set; }
     }
 }

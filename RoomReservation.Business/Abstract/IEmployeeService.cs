@@ -14,6 +14,5 @@ namespace RoomReservation.Business.Abstract
         Task<Employee> Create(Employee entity);
         Task Delete(Employee entity);
         Task Update(Employee entity);
-        List<Employee> GetByDepartment(int id);
     }
 }

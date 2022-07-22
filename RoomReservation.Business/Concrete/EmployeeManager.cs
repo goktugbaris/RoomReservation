@@ -33,12 +33,6 @@ namespace RoomReservation.Business.Concrete
         {
             return await _unitOfWork.Employees.GetAll();
         }
-
-        public List<Employee> GetByDepartment(int id)
-        {
-            return _unitOfWork.Employees.GetByDepartment(id);
-        }
-
         public async Task<Employee> GetById(int id)
         {
             return await _unitOfWork.Employees.GetById(id);

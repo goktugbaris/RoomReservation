@@ -9,6 +9,5 @@ namespace RoomReservation.DataAccess.Abstract
 {
     public interface IDepartmentRepository : IGenericRepository<Department>
     {
-        //Task<List<Employee>> GetByDepartment(int id);
     }
 }

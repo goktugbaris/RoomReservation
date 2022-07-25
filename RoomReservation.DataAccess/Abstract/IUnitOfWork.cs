@@ -8,10 +8,10 @@ namespace RoomReservation.DataAccess.Abstract
 {
     public interface IUnitOfWork:IDisposable
     {
-        IDepartmentRepository Departments { get; }
-        IEmployeeRepository Employees { get; }
-        IOrganizationRepository Organizations { get; }
-        IRoomRepository Rooms { get; }
+        IDepartmentRepository Department { get; }
+        IEmployeeRepository Employee { get; }
+        IOrganizationRepository Organization { get; }
+        IRoomRepository Room { get; }
         IRoomBookingRepository RoomBooking{ get; }
         Task<int> SaveAsync();
 

@@ -18,30 +18,30 @@ namespace RoomReservation.Business.Concrete
         }
         public async Task<Organization> Create(Organization entity)
         {
-            await _unitOfWork.Organizations.Create(entity);
+            await _unitOfWork.Organization.Create(entity);
             await _unitOfWork.SaveAsync();
             return entity;
         }
 
         public async Task Delete(Organization entity)
         {
-            await _unitOfWork.Organizations.Delete(entity);
+            await _unitOfWork.Organization.Delete(entity);
             await _unitOfWork.SaveAsync();
         }
 
         public async Task<List<Organization>> GetAll()
         {
-            return await _unitOfWork.Organizations.GetAll();
+            return await _unitOfWork.Organization.GetAll();
         }
 
         public async Task<Organization> GetById(int id)
         {
-            return await _unitOfWork.Organizations.GetById(id);
+            return await _unitOfWork.Organization.GetById(id);
         }
 
         public async Task Update(Organization entity)
         {
-            await _unitOfWork.Organizations.Update(entity);
+            await _unitOfWork.Organization.Update(entity);
         }
     }
 }

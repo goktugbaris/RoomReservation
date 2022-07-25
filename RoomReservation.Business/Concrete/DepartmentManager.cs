@@ -12,32 +12,38 @@ namespace RoomReservation.Business.Concrete
     public class DepartmentManager : IDepartmentService
     {
         private readonly IUnitOfWork _unitOfWork;
+
+        public DepartmentManager(IUnitOfWork unitOfWork)
+        {
+            _unitOfWork = unitOfWork;
+        }
+
         public async Task<Department> Create(Department entity)
         {
-            await _unitOfWork.Departments.Create(entity);
+            await _unitOfWork.Department.Create(entity);
             await _unitOfWork.SaveAsync();
             return entity;
         }
 
         public async Task Delete(Department entity)
         {
-            await _unitOfWork.Departments.Delete(entity);
+            await _unitOfWork.Department.Delete(entity);
             await _unitOfWork.SaveAsync();
         }
 
         public async Task<List<Department>> GetAll()
         {
-            return await _unitOfWork.Departments.GetAll();
+            return await _unitOfWork.Department.GetAll();
         }
 
         public async Task<Department> GetById(int id)
         {
-            return await _unitOfWork.Departments.GetById(id);
+            return await _unitOfWork.Department.GetById(id);
         }
 
         public async Task Update(Department entity)
         {
-            await _unitOfWork.Departments.Update(entity);
+            await _unitOfWork.Department.Update(entity);
             await _unitOfWork.SaveAsync();
         }
     }

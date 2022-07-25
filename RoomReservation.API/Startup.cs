@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -33,6 +34,11 @@ namespace RoomReservation.Api
             services.AddDbContext<RoomDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MsSqlConnection")));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IOrganizationService, OrganizationManager>();
+            services.AddScoped<IEmployeeService, EmployeeManager>();
+            services.AddScoped<IDepartmentService, DepartmentManager>();
+            services.AddScoped<IRoomBookingService, RoomBookingManager>();
+            services.AddScoped<IRoomService, RoomManager>();
+            services.AddAutoMapper(typeof(Startup)); 
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

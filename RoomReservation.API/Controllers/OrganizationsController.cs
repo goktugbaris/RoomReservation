@@ -47,27 +47,19 @@ namespace RoomReservation.Api.Controllers
             await _organizationService.Create(organization);
             return Ok(organization);
         }
-        //[HttpPut("{id}")]
-        //[Route("update")]
-        //public async Task<IActionResult> UpdateOrganization(int id, Organization organization)
-        //{
-        //    if (id != organization.OrganizationId)
-        //    {
-        //        return BadRequest();
-        //    }
-
-        //    var entity = await _organizationService.GetById(id);
-
-        //    if (entity == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    await _organizationService.Update(organization,entity);
-        //    return NoContent();
-        //}
+        [HttpPut]
+        [Route("update")]
+        public async Task<IActionResult> Update([FromBody] Organization organization)
+        {
+            if (organization == null)
+            {
+                return NotFound();
+            }
+            await _organizationService.Update(organization);
+            return Ok(organization);
+        }
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteOrganization(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             var entity = await _organizationService.GetById(id);
 

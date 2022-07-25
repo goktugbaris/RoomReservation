@@ -66,3 +66,4 @@ C:\Users\GOKTUG\Source\Repos\RoomReservation\RoomReservation.Api\bin\Debug\net5.
 C:\Users\GOKTUG\Source\Repos\RoomReservation\RoomReservation.Api\bin\Debug\net5.0\RoomReservation.Entities.pdb
 C:\Users\GOKTUG\Source\Repos\RoomReservation\RoomReservation.Api\bin\Debug\net5.0\AutoMapper.dll
 C:\Users\GOKTUG\Source\Repos\RoomReservation\RoomReservation.Api\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\GOKTUG\Source\Repos\RoomReservation\RoomReservation.Api\bin\Debug\net5.0\libman.json

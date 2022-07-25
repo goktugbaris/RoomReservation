@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RoomReservation.Api.Dto;
 using RoomReservation.Business.Abstract;
+using RoomReservation.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,41 @@ namespace RoomReservation.Api.Controllers
             var employee = await _employeeService.GetById(id);
             var employeeToReturn = _mapper.Map<Entities.Employee, EmployeeDto>(employee);
             return Ok(employeeToReturn);
+        }
+        [HttpPost]
+        [Route("add")]
+        public async Task<ActionResult> Add([FromBody] Employee employee)
+        {
+            if (employee == null)
+            {
+                return BadRequest();
+            }
+            await _employeeService.Create(employee);
+            return Ok(employee);
+        }
+        [HttpPut]
+        [Route("update")]
+        public async Task<IActionResult> Update([FromBody] Employee employee)
+        {
+            if (employee == null)
+            {
+                return NotFound();
+            }
+            await _employeeService.Update(employee);
+            return NoContent();
+        }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var entity = await _employeeService.GetById(id);
+
+            if (entity == null)
+            {
+                return NotFound();
+            }
+
+            await _employeeService.Delete(entity);
+            return NoContent();
         }
     }
 }

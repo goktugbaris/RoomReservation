@@ -42,6 +42,7 @@ namespace RoomReservation.Business.Concrete
         public async Task Update(Organization entity)
         {
             await _unitOfWork.Organization.Update(entity);
+            await _unitOfWork.SaveAsync();
         }
     }
 }

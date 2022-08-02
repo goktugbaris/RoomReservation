@@ -1,0 +1,113 @@
+[33mcommit d010b4ca8275a9c7f25822c9eca6095c5a69aae7[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: unknown <goktugbaris02@gmail.com>
+Date:   Mon Jul 25 14:06:40 2022 +0300
+
+    Added Identity
+
+[33mcommit ab0a101338ee9c1e776ddbd6673988dc0dbcc82c[m
+Author: unknown <goktugbaris02@gmail.com>
+Date:   Mon Jul 25 10:20:46 2022 +0300
+
+    Comp. Api
+
+[33mcommit 09c3308959a07d6bbc211be796bdd7b52e350de9[m
+Author: unknown <goktugbaris02@gmail.com>
+Date:   Mon Jul 25 08:03:58 2022 +0300
+
+    Api Comp. Get M
+
+[33mcommit 8314b63b76de0022d0cc605bd7f8d7c43cd54139[m
+Author: unknown <goktugbaris02@gmail.com>
+Date:   Fri Jul 22 10:43:55 2022 +0300
+
+    Added Api
+
+[33mcommit 41583d5f9838520f9414fa9afa6cee85f482076a[m
+Author: unknown <goktugbaris02@gmail.com>
+Date:   Fri Jul 22 08:22:55 2022 +0300
+
+    RTD
+
+[33mcommit 220151acd4c27f76821e8ba64c41b6e5fe00c747[m
+Author: unknown <goktugbaris02@gmail.com>
+Date:   Thu Jul 21 16:41:59 2022 +0300
+
+    Added Api
+
+[33mcommit fda04416dce9179b9c61fc9252d7724144ca38d6[m
+Author: unknown <goktugbaris02@gmail.com>
+Date:   Thu Jul 21 14:27:04 2022 +0300
+
+    Completed Business Layer
+
+[33mcommit bb25dcbe13db1c2f0d09440be4cda0d92f916e0e[m
+Author: unknown <goktugbaris02@gmail.com>
+Date:   Thu Jul 21 12:02:39 2022 +0300
+
+    Modified
+
+[33mcommit cc5dedb125c74480411a5b69f5d27b4b03d6676d[m
+Author: unknown <goktugbaris02@gmail.com>
+Date:   Thu Jul 21 10:25:23 2022 +0300
+
+    Fixed Data and Business Layer
+
+[33mcommit b100a4a41ec4e3c45d6c1dc7220d2296d677d78e[m
+Author: unknown <goktugbaris02@gmail.com>
+Date:   Thu Jul 21 09:37:10 2022 +0300
+
+    M
+
+[33mcommit 43804a0c008962d2d3900d846aacd12226f0f72b[m
+Author: unknown <goktugbaris02@gmail.com>
+Date:   Thu Jul 21 09:33:33 2022 +0300
+
+    Modified
+
+[33mcommit 557e61b0fc19eef68c2b83973992b845eaf9469c[m
+Author: unknown <goktugbaris02@gmail.com>
+Date:   Wed Jul 20 15:56:52 2022 +0300
+
+    Room Validator Added
+
+[33mcommit 312ef893bdd703f81c366f2c71c22fcdb101c11d[m
+Author: unknown <goktugbaris02@gmail.com>
+Date:   Wed Jul 20 15:20:55 2022 +0300
+
+    Validator Added
+
+[33mcommit 0be33c7328c93120d31d9daf0df71c953666f749[m
+Author: unknown <goktugbaris02@gmail.com>
+Date:   Wed Jul 20 14:45:50 2022 +0300
+
+    Business Layer Added
+
+[33mcommit 40c62183570aad3cde31b77490e5470a086bda55[m
+Author: unknown <goktugbaris02@gmail.com>
+Date:   Wed Jul 20 09:21:19 2022 +0300
+
+    Completed Generic Repository
+
+[33mcommit e7dc372b3486bbdf4ef5a5cac46884a3874def0e[m
+Author: unknown <goktugbaris02@gmail.com>
+Date:   Tue Jul 19 15:50:03 2022 +0300
+
+    Added gitignore
+
+[33mcommit 3271d6c91abc240b421ac10883fb58f6ea6c838f[m
+Author: unknown <goktugbaris02@gmail.com>
+Date:   Tue Jul 19 15:47:42 2022 +0300
+
+    Added Repositories
+
+[33mcommit 1fa4d32761591f3ae174be7282eafae4f1a712ed[m
+Author: unknown <goktugbaris02@gmail.com>
+Date:   Tue Jul 19 15:09:59 2022 +0300
+
+    Entities
+
+[33mcommit 00d5b160f0edbf7496972c824b52516fc023f875[m
+Author: Goktug Baris <92438686+goktugbaris@users.noreply.github.com>
+Date:   Tue Jul 19 13:21:31 2022 +0300
+
+    Initial commit

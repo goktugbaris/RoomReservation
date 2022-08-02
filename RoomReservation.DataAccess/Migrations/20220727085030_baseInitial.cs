@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RoomReservation.DataAccess.Migrations
 {
-    public partial class initialCreate : Migration
+    public partial class baseInitial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

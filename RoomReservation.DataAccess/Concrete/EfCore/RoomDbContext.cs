@@ -1,6 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using RoomReservation.DataAccess.Configurations;
 using RoomReservation.Entities;
+using RoomReservation.Entities.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +11,9 @@ using System.Threading.Tasks;
 
 namespace RoomReservation.DataAccess.Concrete.EfCore
 {
-    public class RoomDbContext:DbContext
+    public class RoomDbContext:IdentityDbContext<AppUser>
     {
-        public RoomDbContext(DbContextOptions options):base(options)
+        public RoomDbContext(DbContextOptions<RoomDbContext> options):base(options)
         {
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -26,6 +28,7 @@ namespace RoomReservation.DataAccess.Concrete.EfCore
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new RoomBookingConfigurations());
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

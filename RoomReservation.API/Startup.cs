@@ -16,6 +16,7 @@ using RoomReservation.Business.Abstract;
 using RoomReservation.Business.Concrete;
 using RoomReservation.DataAccess.Abstract;
 using RoomReservation.DataAccess.Concrete.EfCore;
+using RoomReservation.Entities.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,15 +38,20 @@ namespace RoomReservation.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<RoomDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MsSqlConnection")));
+            services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<RoomDbContext>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IOrganizationService, OrganizationManager>();
             services.AddScoped<IEmployeeService, EmployeeManager>();
             services.AddScoped<IDepartmentService, DepartmentManager>();
             services.AddScoped<IRoomBookingService, RoomBookingManager>();
             services.AddScoped<IRoomService, RoomManager>();
-            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MsSqlConnection")));
+            services.AddScoped<IAccountRepository, AccountRepository>();
             // For Identity
-            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+            //services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.User.RequireUniqueEmail = false;
+            });
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -57,13 +63,14 @@ namespace RoomReservation.Api
                 options.SaveToken = true;
                 options.RequireHttpsMetadata = false;
                 options.TokenValidationParameters = new TokenValidationParameters()
-               {
-                  ValidateIssuer = true,
-                  ValidateAudience = true,
-                  ValidIssuer = Configuration["Jwt:Issuer"],
-                  ValidAudience = Configuration["Jwt:Audience"],
-                  IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"])
-                )};
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidIssuer = Configuration["Jwt:Issuer"],
+                    ValidAudience = Configuration["Jwt:Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Secret"])
+                )
+                };
             });
             services.AddMvc();
             services.AddAutoMapper(typeof(Startup)); 
@@ -96,4 +103,5 @@ namespace RoomReservation.Api
             });
         }
     }
+
 }

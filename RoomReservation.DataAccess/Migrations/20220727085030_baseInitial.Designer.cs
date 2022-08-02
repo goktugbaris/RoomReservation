@@ -10,8 +10,8 @@ using RoomReservation.DataAccess.Concrete.EfCore;
 namespace RoomReservation.DataAccess.Migrations
 {
     [DbContext(typeof(RoomDbContext))]
-    [Migration("20220722062841_initialCreate")]
-    partial class initialCreate
+    [Migration("20220727085030_baseInitial")]
+    partial class baseInitial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
